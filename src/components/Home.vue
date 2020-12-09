@@ -35,7 +35,6 @@ export default {
   name: 'Home',
   data() {
       return {
-        errors: [],
         name: null,
         email: null,
         mobile: null,
