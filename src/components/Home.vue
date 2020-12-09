@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+form
   .form-left-decoration
   .form-right-decoration
   .circle
