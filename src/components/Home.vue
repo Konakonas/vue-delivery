@@ -6,7 +6,7 @@ form
   div(v-if='!accept' class="decor form-inner")
     p
       label(for='name')  
-      input#name(v-model='name' type='text' name='name' placeholder="ФИО")
+      input#name(type='text' name='name' v-model='name' placeholder="ФИО")
     p
       label(for='email') 
       input#email(type='email' name='email' required='' v-model='email' placeholder="Email")
@@ -52,9 +52,6 @@ export default {
         else if (!this.checkbox) {
         alert("Подтвердите согласие на обработку персональных данных");
       }
-        else if (!this.validEmail(this.email)) {
-        this.errors.push('Укажите корректный адрес электронной почты.');
-      }
         else {
             this.accept = true;
         }
@@ -63,10 +60,6 @@ export default {
       this.errors = [];
       e.preventDefault();
     },
-    validEmail(email) {
-      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(email);
-    }
   }
 }
 
